@@ -1,4 +1,5 @@
-﻿using MyWebApp.Dals;
+﻿using log4net;
+using MyWebApp.Dals;
 using MyWebApp.Models;
 using Newtonsoft.Json;
 using System;

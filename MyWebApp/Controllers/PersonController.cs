@@ -12,18 +12,40 @@ using System.Web.Http;
 
 namespace MyWebApp.Controllers
 {
-    public class PersonController : ApiController
+    public class PersonController : BaseApiController
     {
         // GET: Person
         public IHttpActionResult Get()
         {
-            return Ok(Person.GetPersons());
+            try
+            {
+                return Ok(Person.GetPersons());
+            }catch(Exception ex)
+            {
+                logger.Error(ex.Message);
+            }
+
+            return null;
            
         }
 
+        [Authorize]
         public IHttpActionResult Get(int id)
         {
-            return  Ok(Person.GetPersons(id));
+            var u = User;
+            try
+            {
+                logger.InfoFormat("trying to get id for {0}", id);
+                return Ok(Person.GetPersons(id));
+            }
+            catch (Exception ex)
+            {
+                logger.Error(ex.Message);
+            }
+
+            return null;
+
+            
             
         }
 

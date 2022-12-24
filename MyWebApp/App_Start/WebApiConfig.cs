@@ -16,6 +16,7 @@ namespace MyWebApp
             // Web API configuration and services
             var cors = new EnableCorsAttribute(origins: "*", headers: "*", methods: "*");
             config.EnableCors(cors);
+          
 
             // Serialize with camelCase formatter for JSON.
             var jsonFormatter = config.Formatters.OfType<JsonMediaTypeFormatter>().First();
@@ -23,6 +24,8 @@ namespace MyWebApp
             jsonFormatter.SerializerSettings.DateTimeZoneHandling = Newtonsoft.Json.DateTimeZoneHandling.Local;
 
             config.Formatters.Remove(config.Formatters.XmlFormatter);
+
+            
 
             // Web API routes
             config.MapHttpAttributeRoutes();

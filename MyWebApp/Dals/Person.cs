@@ -29,7 +29,7 @@ namespace MyWebApp.Dals
             return ds.Tables[0];
         }
 
-        public static DataTable GetPersons(int id)
+        public static Object GetPersons(int id)
         {
             DataSet ds = new DataSet();
 
