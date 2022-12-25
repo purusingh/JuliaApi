@@ -20,7 +20,7 @@ namespace MyWebApp.Controllers.Authorizations
             var identity = new ClaimsIdentity(context.Options.AuthenticationType);
             if (context.UserName == "admin" && context.Password == "admin")
             {
-                identity.AddClaim(new Claim("userId", "10"));
+                identity.AddClaim(new Claim("userId", "1"));
                 identity.AddClaim(new Claim(ClaimTypes.Role, "admin"));
                 identity.AddClaim(new Claim("username", "admin"));
                 identity.AddClaim(new Claim(ClaimTypes.Name, "Hi Admin"));
@@ -28,7 +28,7 @@ namespace MyWebApp.Controllers.Authorizations
             }
             else if (context.UserName == "user" && context.Password == "user")
             {
-                identity.AddClaim(new Claim("userId", "20"));
+                identity.AddClaim(new Claim("userId", "2"));
                 identity.AddClaim(new Claim(ClaimTypes.Role, "user"));
                 identity.AddClaim(new Claim("username", "user"));
                 identity.AddClaim(new Claim(ClaimTypes.Name, "Hi User"));
