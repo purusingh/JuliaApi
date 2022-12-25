@@ -49,6 +49,7 @@ namespace MyWebApp.Controllers
             
         }
 
+        [Authorize(Roles = "admin")]
         public IHttpActionResult Post(MPerson person)
         {
             return Ok(Person.PostPersons(person));

@@ -1,0 +1,6 @@
+-Production(real production workload)
+    -- hot fixes
+-Staging(blue / green - duplicate of the production and if all thest pass swap it with production)
+-master(main)
+    -- features
+--qa ( perform test before merging into staging)
